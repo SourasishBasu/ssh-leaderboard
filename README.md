@@ -39,4 +39,4 @@ go run ./ssh-leaderboard.go
 ssh localhost -p 23234
 ```
 
-![test](./board.png)
+![test](./assets/board.png)
