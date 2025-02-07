@@ -1,7 +1,5 @@
 package main
 
-// This example demonstrates various Lip Gloss style and layout features.
-
 import (
 	"context"
 	"errors"
@@ -27,15 +25,11 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/lucasb-eyer/go-colorful"
 	"github.com/muesli/gamut"
-	"github.com/sourasishbasu/test/db"
+	"github.com/sourasishbasu/ssh-leaderboard/internal/db"
 	"golang.org/x/term"
 )
 
 const (
-	// In real life situations we'd adjust the document to fit the width we've
-	// detected. In the case of this example we're hardcoding the width, and
-	// later using the detected width only to truncate in order to avoid jaggy
-	// wrapping.
 	width = 96
 )
 

@@ -1,4 +1,4 @@
-module github.com/sourasishbasu/test
+module github.com/sourasishbasu/ssh-leaderboard
 
 go 1.23.3
 
