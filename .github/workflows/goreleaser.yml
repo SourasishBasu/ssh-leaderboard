@@ -1,8 +1,15 @@
 name: goreleaser
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - 'main'
+    paths-ignore:
+      - '!assets/**'
+      - '!env.example'
+      - '!README.md'
+      - '!sqlc/**'
+      - '!.github/workflows/ci.yml'
+
 permissions:
   contents: write
 jobs:
