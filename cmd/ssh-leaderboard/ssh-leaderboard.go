@@ -227,7 +227,8 @@ func teaHandler(s ssh.Session) (tea.Model, []tea.ProgramOption) {
 func startServer() {
 	// Create the SSH server
 	s, err := wish.NewServer(
-		wish.WithAddress(net.JoinHostPort(host, port)),
+		wish.WithAddress(net.JoinHostPort("0.0.0.0", port)),
+		wish.WithPublicKeyAuth(publicKeyHandler),
 		wish.WithHostKeyPath(".ssh/id_ed25519"),
 		wish.WithMiddleware(
 			bubbletea.Middleware(teaHandler),
@@ -256,6 +257,10 @@ func startServer() {
 	if err := s.Shutdown(ctx); err != nil && !errors.Is(err, ssh.ErrServerClosed) {
 		log.Error("Could not stop server", "error", err)
 	}
+}
+
+func publicKeyHandler(_ctx ssh.Context, _key ssh.PublicKey) bool {
+	return true
 }
 
 func getMembers() []table.Row {

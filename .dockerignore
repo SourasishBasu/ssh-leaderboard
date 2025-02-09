@@ -1,0 +1,7 @@
+.git
+.github
+assets
+sqlc
+env.example
+README.md
+*.exe
