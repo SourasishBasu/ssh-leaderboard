@@ -7,8 +7,9 @@ before:
     - go mod tidy
 
 builds:
-  - main: ./cmd/ssh-leaderboard
-  - env:
+  - main: ./cmd/ssh-leaderboard/ssh-leaderboard.go
+    id: "leaderboard"
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
