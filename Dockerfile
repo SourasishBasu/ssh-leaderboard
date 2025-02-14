@@ -30,7 +30,6 @@ RUN groupadd -r appuser && useradd -r -g appuser appuser
 
 COPY --from=builder /app/bin/leaderboard ./leaderboard
 COPY --from=builder /app/.ssh ./.ssh
-COPY --from=builder /app/cmd/ssh-leaderboard/.env ./.env
 
 RUN chown appuser:appuser /app
 
