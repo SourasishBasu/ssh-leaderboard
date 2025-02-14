@@ -8,10 +8,20 @@ import (
 	"github.com/jackc/pgx/v5/pgtype"
 )
 
-type Participant struct {
-	ID    int32
-	Game1 pgtype.Int4
-	Game2 pgtype.Int4
-	Game3 pgtype.Int4
-	Name  string
+type CompletedQuestion struct {
+	ID             int32
+	TeamID         pgtype.Text
+	QuestionStatus pgtype.Text
+	CompletedAt    pgtype.Timestamptz
+}
+
+type Team struct {
+	TeamID       string
+	TeamName     string
+	PasswordHash string
+}
+
+type TeamPoint struct {
+	TeamID      string
+	TotalPoints pgtype.Int4
 }

@@ -4,4 +4,5 @@ assets
 sqlc
 env.example
 README.md
+.env
 *.exe
