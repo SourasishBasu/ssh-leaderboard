@@ -27,10 +27,13 @@ touch .env
 ```
 - Add the database connection string to `.env` file.
 
-- Start the SSH server
+- Start the SSH server locally
 
 ```bash
 go run ./ssh-leaderboard.go
+
+# With Docker
+docker run -d -v $(pwd)/.env:/app/.env -p 23234:23234 ghcr.io/sourasishbasu/leaderboard:latest
 ```
 
 - SSH into the server from Terminal.
